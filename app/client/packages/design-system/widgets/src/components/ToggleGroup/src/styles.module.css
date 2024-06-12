@@ -1,0 +1,17 @@
+.toggleGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &[data-disabled] {
+    cursor: not-allowed;
+  }
+
+  &[data-disabled] .label {
+    opacity: var(--opacity-disabled);
+  }
+}
+
+.error {
+  margin-block-start: var(--inner-spacing-2);
+}
