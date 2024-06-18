@@ -23,7 +23,7 @@ jobs:
           - 6379:6379
     defaults:
       run:
-        working-directory: app/server
+        working-directory: app/server/appsmith-interfaces
     steps:
       - uses: actions/checkout@v3
         with:
@@ -68,4 +68,4 @@ jobs:
           APPSMITH_ENCRYPTION_SALT: "salt"
           APPSMITH_ENVFILE_PATH: /tmp/dummy.env
           APPSMITH_VERBOSE_LOGGING_ENABLED: false
-        run: mvn -B -pl '!appsmith-server,!appsmith-git,!reactive-caching' verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=saicharanchetpelly31_appsmith-be
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=saicharanchetpelly31_appsmith-be
